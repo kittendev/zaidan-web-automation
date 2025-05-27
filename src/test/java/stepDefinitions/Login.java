@@ -53,9 +53,16 @@ public class Login {
 
 
     @Then("User is navigated to the dashboard page")
-    public void user_should_be_redirected_to_dashboard(){
+    public void user_successful_login(){
         WebElement dashboardHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Dasbor - Bendahara')]")));
         assertNotNull(dashboardHeader, "Dashboard header not found, login might have failed.");
+        driver.quit();
+    }
+
+    @Then("User should be able to see {string} notification message")
+    public void user_unsuccessful_login(String expectedMessage) {
+        WebElement alert = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'" + expectedMessage + "')]")));
+        assertNotNull(alert, "Notification message not found");
         driver.quit();
     }
 

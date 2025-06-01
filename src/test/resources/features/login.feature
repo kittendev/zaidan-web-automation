@@ -8,7 +8,7 @@ Feature: Login
         Then User is navigated to the dashboard page
     @LoginInvalid
     Scenario: Check login is unsuccessful with invalid credentials because username not registered
-        Given User type "indra" in the username field
+        Given User type "firman" in the username field
         And User type "admin123" in the password field
         And User press the login button
         Then User should be able to see "Incorrect username or password, please try again!" notification message

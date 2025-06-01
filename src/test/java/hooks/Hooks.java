@@ -3,6 +3,7 @@ package hooks;
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.*;
+import utils.DriverManager;
 
 public class Hooks {
 
@@ -28,6 +29,7 @@ public class Hooks {
         } else {
             scenarioTest.pass("Scenario Passed ✅");
         }
+        DriverManager.quitDriver();
     }
 
     @AfterAll
@@ -35,4 +37,3 @@ public class Hooks {
         extent.flush();
     }
 }
-

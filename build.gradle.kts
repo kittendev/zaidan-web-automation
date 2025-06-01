@@ -16,6 +16,7 @@ dependencies {
     testImplementation("io.cucumber:cucumber-junit-platform-engine:7.22.2")
     testImplementation("org.seleniumhq.selenium:selenium-java:4.31.0")
     testImplementation("org.junit.platform:junit-platform-suite:1.10.0")
+    testImplementation("com.aventstack:extentreports:5.1.1")
 }
 
 tasks.test {
